@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Ultimate Premium | [Nama Anda]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ================================================= */
+        /* === CSS (Tampilan Mewah, Responsif, Interaktif) === */
+        /* ================================================= */
+        
+        :root {
+            --color-dark: #0A0A0A;
+            --color-light: #F5F5F5;
+            --color-primary: #FFD700; /* Emas Premium */
+            --color-secondary: #00BFFF; /* Biru Neon */
+            --color-whatsapp: #25D366;
+            --color-instagram: #E4405F;
+            --color-telegram: #0088CC;
+            --color-tiktok: #000000;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--color-dark);
+            color: var(--color-light);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            text-rendering: optimizeLegibility;
+        }
+        
+        /* Heading Styles */
+        h1, h2 { font-weight: 800; color: #FFFFFF; }
+        h1 { font-size: 3.5em; }
+        h2 { font-size: 2.5em; text-align: center; margin-bottom: 40px; color: var(--color-primary); }
+        .section-subtitle { text-align: center; color: #BBB; margin-bottom: 60px; font-weight: 300; }
+
+        section { padding: 100px 5%; min-height: 50vh; }
+
+        /* --- Navigasi (Navbar) --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: rgba(10, 10, 10, 0.95);
+            position: fixed;
+            width: 90%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); 
+        }
+
+        .logo-text {
+            font-size: 1.8em;
+            font-weight: 800;
+            color: var(--color-primary);
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7); 
+        }
+
+        .navbar a {
+            color: var(--color-light);
+            text-decoration: none;
+            margin-left: 35px;
+            font-weight: 600;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: var(--color-secondary); 
+            border-bottom: 2px solid var(--color-primary);
+        }
+
+        /* --- Hero Section & Parallax (Tempat Ganti Foto Sendiri) --- */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 0;
+            /* **GANTI DENGAN URL FOTO ANDA SENDIRI** */
+            background: url('https://img1.pixhost.to/images/10324/663200704_ochobot.jpg') no-repeat center center/cover; 
+            background-attachment: fixed; 
+            position: relative;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: 1;
+        }
+        .hero-section .content { max-width: 900px; padding: 20px 5%; z-index: 2; }
+        .typing-text-container { font-size: 2.2em; min-height: 70px; font-weight: 600; margin: 10px 0 30px; color: var(--color-secondary); font-family: 'Roboto Mono', monospace; }
+        .cursor { background-color: var(--color-secondary); width: 4px; height: 40px; animation: blink 0.7s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        .cta-button { 
+            display: inline-block; background: var(--color-primary); color: var(--color-dark); padding: 12px 30px; text-decoration: none; margin-top: 30px; border-radius: 5px; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4); border: none;
+        }
+        .cta-button:hover { background: var(--color-secondary); color: var(--color-light); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0, 191, 255, 0.6); }
+
+        /* --- Bagian Tentang Pembuat/Saya --- */
+        #tentang { background: #181818; }
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile-pic {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--color-primary);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            flex-shrink: 0;
+        }
+        .about-text { max-width: 600px; }
+        .about-text h3 { color: var(--color-secondary); font-weight: 600; margin-top: 0; }
+
+        /* --- Bagian Proyek (Grid Card Mewah) --- */
+        #proyek { background: var(--color-dark); }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .project-card {
+            background: #1e1e1e;
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-top: 3px solid var(--color-primary);
+            cursor: pointer;
+        }
+        .project-card:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 10px var(--color-primary);
+        }
+        .project-card h4 { color: var(--color-secondary); font-size: 1.5em; margin-top: 0; }
+        
+        /* --- Form Saran Mewah --- */
+        #saran { background: #181818; }
+        .suggestion-form { max-width: 600px; margin: 0 auto; }
+        .suggestion-form input[type="text"], .suggestion-form textarea {
+            width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #333; background: #252525; color: var(--color-light); border-radius: 8px; font-family: 'Poppins', sans-serif; transition: border-color 0.3s ease; resize: vertical;
+        }
+        .suggestion-form input[type="text"]:focus, .suggestion-form textarea:focus { outline: none; border-color: var(--color-primary); }
+        .submit-button { background: var(--color-secondary); color: var(--color-dark); padding: 12px 30px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background 0.3s ease; }
+        .submit-button:hover { background: var(--color-primary); }
+
+        /* --- Footer (Kontak Media Sosial Mewah & Animasi Teks Baru) --- */
+        .footer { background: var(--color-dark); text-align: center; padding: 50px 5%; border-top: 1px solid #222; }
+        
+        /* Kontainer Teks Animasi Kontak */
+        .contact-typing-container {
+            font-size: 2em;
+            font-weight: 800;
+            color: var(--color-primary); /* Emas */
+            min-height: 40px; 
+            margin-bottom: 30px;
+            font-family: var(--font-family-body);
+        }
+        .contact-typing-cursor {
+            background-color: var(--color-primary);
+            width: 3px;
+            height: 30px;
+            animation: blink 0.7s infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+
+        .social-icons { margin-top: 30px; }
+        .social-icons a {
+            display: inline-block; width: 60px; height: 60px; line-height: 60px; margin: 0 10px; border-radius: 50%; font-size: 2em; color: var(--color-light); transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+        }
+        /* Style Spesifik Logo Mewah */
+        .social-icons a.whatsapp { background: var(--color-whatsapp); box-shadow: 0 0 15px var(--color-whatsapp); }
+        .social-icons a.instagram { background: var(--color-instagram); box-shadow: 0 0 15px var(--color-instagram); }
+        .social-icons a.telegram { background: var(--color-telegram); box-shadow: 0 0 15px var(--color-telegram); }
+        .social-icons a.tiktok { background: var(--color-dark); border: 2px solid var(--color-light); color: var(--color-light); box-shadow: 0 0 15px var(--color-light); }
+        .social-icons a:hover { transform: scale(1.1); }
+        .social-icons a.whatsapp:hover { background: var(--color-light); color: var(--color-whatsapp); }
+        .social-icons a.instagram:hover { background: var(--color-light); color: var(--color-instagram); }
+        .social-icons a.telegram:hover { background: var(--color-light); color: var(--color-telegram); }
+        .social-icons a.tiktok:hover { background: var(--color-primary); color: var(--color-dark); border-color: var(--color-primary); }
+
+        /* --- Modal Pop-up (Penjelasan Proyek) --- */
+        .modal {
+            display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background-color: #1e1e1e; margin: 10% auto; padding: 30px; border: 3px solid var(--color-primary); width: 80%; max-width: 700px; border-radius: 15px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9); position: relative;
+        }
+        .modal-content h3 { color: var(--color-primary); margin-top: 0; font-size: 2em; }
+        .close-button { color: #AAA; float: right; font-size: 28px; font-weight: bold; transition: color 0.3s ease; }
+        .close-button:hover, .close-button:focus { color: var(--color-secondary); text-decoration: none; cursor: pointer; }
+
+        /* --- Responsif --- */
+        @media (max-width: 900px) {
+            h1 { font-size: 2.8em; }
+            .typing-text-container { font-size: 1.8em; min-height: 50px; }
+            .contact-typing-container { font-size: 1.5em; min-height: 35px; }
+            .about-content { flex-direction: column; text-align: center; } 
+            .profile-pic { margin-bottom: 20px; }
+            .hero-section .content { text-align: center; }
+            .about-text { max-width: none; }
+        }
+        @media (max-width: 600px) {
+            .navbar { flex-direction: column; align-items: flex-start; position: relative; width: auto; }
+            .navbar nav { margin-top: 10px; }
+            .navbar a { margin-left: 0; margin-right: 15px; font-size: 0.9em; }
+            h1 { font-size: 2em; }
+            .typing-text-container { font-size: 1.2em; min-height: 35px; }
+            .contact-typing-container { font-size: 1.2em; min-height: 30px; }
+            .social-icons a { width: 45px; height: 45px; line-height: 45px; font-size: 1.5em; margin: 0 5px; }
+            .modal-content { margin: 20% auto; width: 90%; }
+        }
+        /* Pastikan teks panjang tidak memotong: */
+        .hero-section p, .about-text p, .project-card p, .modal-content p {
+            word-wrap: break-word; 
+            overflow-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo-placeholder">
+            <span class="logo-text">⚜️ ManzzGanzz</span>
+        </div>
+        <nav>
+            <a href="#home">Beranda</a>
+            <a href="#tentang">Tentang</a>
+            <a href="#proyek">Proyek</a>
+            <a href="#saran">Saran</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section" id="home">
+            <div class="content">
+                <h1>Welcome to My Creative Space.</h1>
+                <div class="typing-text-container">
+                    <span class="static-text">Saya adalah </span>
+                    <span class="typing-text" data-words='["pemula yang terus belajar dan tidak takut memperbaiki kesalahan.", "learner yang masih bertumbuh, belajar dari setiap kesalahan dan setiap dukungan di sekitar saya..", "seseorang yang masih banyak kekurangan, tapi selalu berusaha berkembang dengan bantuan teman-teman."]' data-wait="3000"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p>Setiap ide selalu punya potensi untuk tumbuh menjadi sesuatu yang luar biasa. Melalui desain dan pengembangan digital, saya menata ide tersebut menjadi pengalaman yang estetik, intuitif, dan memiliki karakter. Inilah cara saya menghadirkan nilai dari sebuah imajinasi menjadi kenyataan!</p>
+                <a href="#tentang" class="cta-button">Tentang Saya Lebih Lanjut</a>
+            </div>
+        </section>
+
+        <section id="tentang">
+            <h2>About Me</h2>
+            <p class="section-subtitle">Ini adalah ruang di mana saya tumbuh, mencoba, bereksperimen, dan membangun kemampuan saya sedikit demi sedikit.</p>
+            <div class="about-content">
+                <img src="https://img1.pixhost.to/images/10324/663201453_ochobot.jpg" alt="Foto Profil Profesional" class="profile-pic">
+                <div class="about-text">
+                    <h3>M.Salman Alfarisi- Mahasiswa UIN SUSKA RIAU</h3>
+                    <p>Saya adalah mahasiswa yang sedang belajar dan berkembang dalam dunia teknologi dan desain digital. Meskipun saya masih pemula dan masih banyak belajar, saya memiliki ketertarikan besar terhadap programing, serta pengembangan web sederhana. Setiap hari, saya mencoba memahami dasar-dasar baru, memperbaiki kesalahan, dan membangun kemampuan saya sedikit demi sedikit*.</p>
+                    <p>Saya percaya bahwa proses tidak pernah menghianati hasil. Karena itu, saya selalu terbuka terhadap kritik, saran, dan bantuan dari teman-teman maupun orang yang lebih berpengalaman. Bagi saya, kolaborasi dan belajar bersama adalah cara terbaik untuk tumbuh dan meningkatkan kualitas diri.
+                    Saat ini, saya fokus membangun portofolio, mengembangkan skill dasar seperti HTML, CSS, desain dasar, serta memperluas wawasan tentang dunia digital. Saya mungkin masih jauh dari sempurna, tetapi saya berkomitmen untuk terus belajar, berkembang, dan menghasilkan karya yang lebih baik dari hari ke hari.</p>
+                    </div>
+            </div>
+        </section>
+
+        <section id="proyek">
+            <h2>Program yang sedang saya kerjakan</h2>
+            <p class="section-subtitle">Berikut beberapa project yang sedang saya lakukan...</p>
+            <div class="project-grid">
+                <div class="project-card" onclick="openModal('All Script Whatsapp & Telegram', 'Mengembangkan sistem otomatisasi khusus (script) yang super stabil, responsif, dan siap tancap gas untuk segala kebutuhan Anda.')">
+                    <h4>All Script Whatsapp & Telegram</h4>
+                    <p>Mengembangkan sistem otomatisasi WhatsApp & Telegram yang stabil, cepat, dan siap digunakan untuk berbagai kebutuhan.</p>
+                </div>
+                <div class="project-card" onclick="openModal('Pembuatan link HTML custom untuk portofolio, pribadi, atau kebutuhan lainnya', 'Memastikan desainnya elegan, loading cepat, dan mudah dinavigasi, sehingga recruiter atau klien potensial dapat menemukan informasi Anda dengan cepat dan tanpa hambatan.')">
+                    <h4>Pembuatan link HTML custom untuk portofolio, pribadi, atau kebutuhan lainnya</h4>
+                    <p>Link dirancang eksklusif sesuai branding pribadi atau portofolio.</p>
+                </div>
+                <div class="project-card" onclick="openModal('Band/Unband WhatsApp', 'Menyediakan layanan pemblokiran nomor (band) dan pemulihan nomor (unband) yang didukung oleh Sistem Manajemen internal yang kompleks.')">
+                    <h4>Band/Unband WhatsApp</h4>
+                    <p>Layanan band/unband nomor WhatsApp dengan profesional.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="saran">
+            <h2>Beri Saya Saran Eksklusif</h2>
+            <p class="section-subtitle">Bantu saya menjadi lebih baik! Saran Anda adalah motivasi buat saya.</p>
+            <div class="suggestion-form">
+                <form id="suggestionForm">
+                    <input type="text" name="nama" placeholder="Nama Anda (Opsional)">
+                    <textarea name="saran" rows="5" placeholder="Saran Anda untuk portofolio ini..." required></textarea>
+                    <button type="submit" class="submit-button">Kirim Saran Anda &rarr;</button>
+                    <p style="font-size: 0.9em; color: #666; margin-top: 15px;">*Perhatian: Saya hanya manusia biasa, jadi saya masih perlu saran dari anda sekalian.</p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer" id="kontak">
+        <div class="contact-typing-container">
+            <span class="contact-typing-text" data-words='["Saya masih pemula,jadi mohon support dari semuanya.", "Tertarik dengan project yang saya lakukan?", "Hubungi Saya Sekarang Juga!"]' data-wait="3000"></span>
+            <span class="contact-typing-cursor"></span>
+        </div>
+        
+        <p class="section-subtitle" style="margin-bottom: 30px; margin-top: 0;">Contact pribadi saya.</p>
+        <div class="social-icons">
+            <a href="https://wa.me/6285169162831" target="_blank" class="whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/mannalff_?igsh=MWM1eGZxZWw3ZTIzOA==" target="_blank" class="instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://t.me/franscrash" target="_blank" class="telegram" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://www.tiktok.com/@manzzganzz_?_r=1&_t=ZS-91Ym0M6na1k" target="_blank" class="tiktok" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <p class="footer-copy">&copy; 2025 ManzzGanzz | Designed with Focus, Built with Passion .</p>
+    </footer>
+    
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+    
+    <script>
+        // FUNGSI TYPEWRITER REUSABLE
+        const TypeWriter = function(txtElement, words, wait = 3000, cursorElement = null) {
+            this.txtElement = txtElement;
+            this.words = words;
+            this.txt = '';
+            this.wordIndex = 0;
+            this.wait = parseInt(wait, 10);
+            this.cursorElement = cursorElement; // Elemen kursor opsional
+            this.type();
+            this.isDeleting = false;
+        }
+
+        TypeWriter.prototype.type = function() {
+            const current = this.wordIndex % this.words.length;
+            const fullTxt = this.words[current];
+
+            if(this.isDeleting) { this.txt = fullTxt.substring(0, this.txt.length - 1); } 
+            else { this.txt = fullTxt.substring(0, this.txt.length + 1); }
+
+            this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+            let typeSpeed = 150;
+
+            if(this.isDeleting) { typeSpeed /= 2; }
+
+            if(!this.isDeleting && this.txt === fullTxt) {
+                typeSpeed = this.wait;
+                this.isDeleting = true;
+            } else if(this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.wordIndex++;
+                typeSpeed = 500;
+            }
+            
+            // Mengatur visibilitas kursor
+            if (this.cursorElement) {
+                this.cursorElement.style.display = 'inline-block';
+            }
+
+            setTimeout(() => this.type(), typeSpeed);
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+
+        function init() {
+            // Inisialisasi HERO SECTION
+            const heroTxtElement = document.querySelector('.typing-text');
+            const heroCursor = document.querySelector('.hero-section .cursor');
+            const heroWords = JSON.parse(heroTxtElement.getAttribute('data-words')); 
+            const heroWait = heroTxtElement.getAttribute('data-wait');
+            new TypeWriter(heroTxtElement, heroWords, heroWait, heroCursor);
+
+            // Inisialisasi FOOTER CONTACT SECTION (BARU)
+            const contactTxtElement = document.querySelector('.contact-typing-text');
+            const contactCursor = document.querySelector('.contact-typing-cursor');
+            const contactWords = JSON.parse(contactTxtElement.getAttribute('data-words'));
+            const contactWait = contactTxtElement.getAttribute('data-wait');
+            new TypeWriter(contactTxtElement, contactWords, contactWait, contactCursor);
+            
+            // Inisialisasi pengiriman formulir Telegram
+            document.getElementById('suggestionForm').addEventListener('submit', sendTelegramMessage);
+        }
+
+        // FUNGSI MODAL POP-UP PROYEK
+        function openModal(title, description) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDescription').innerHTML = description;
+            document.getElementById('projectModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('projectModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+        /* ================================================= */
+        /* === FUNGSI PENGIRIMAN TELEGRAM BARU (MODIFIKASI) === */
+        /* ================================================= */
+
+        // **GANTI DENGAN TOKEN BOT ANDA**
+        const BOT_TOKEN = '8365442105:AAFNu7pIgW5x5zO8HatNqhuRPp9IYbsMIrE'; 
+        // **GANTI DENGAN CHAT ID ANDA (ID TELEGRAM PRIBADI/GRUP)**
+        const CHAT_ID = '8118099684'; 
+
+        async function sendTelegramMessage(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const nama = form.querySelector('input[name="nama"]').value || 'Anonim';
+            const saran = form.querySelector('textarea[name="saran"]').value;
+            const submitButton = form.querySelector('.submit-button');
+
+            if (!saran.trim()) {
+                alert('Saran tidak boleh kosong!');
+                return;
+            }
+
+            // Pesan yang akan dikirim ke Telegram
+            const messageText = `
+☠️**SARAN DARI ORANG ORANG NIHH** ☠️
+=========================
+**Nama Pengirim:** ${nama}
+**Saran:** ${saran}
+=========================
+`;
+
+            const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+            
+            submitButton.disabled = true;
+            submitButton.innerText = 'Mengirim...';
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: CHAT_ID,
+                        text: messageText,
+                        parse_mode: 'Markdown' // Menggunakan Markdown untuk format tebal
+                    })
+                });
+
+                if (response.ok) {
+                    alert('Saran berhasil terkirim! Terima kasih atas sarannyaa....😇😇');
+                    form.reset(); // Kosongkan formulir setelah berhasil
+                } else {
+                    const data = await response.json();
+                    console.error('Telegram API Error:', data);
+                    alert(`Gagal mengirim saran. Mungkin ada masalah dengan Token Bot/Chat ID Anda. (Error: ${data.description || response.statusText})`);
+                }
+            } catch (error) {
+                console.error('Fetch Error:', error);
+                alert('Terjadi kesalahan koneksi saat mencoba mengirim saran.');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.innerText = 'Kirim Saran Anda →';
+            }
+        }
+        
+    </script>
+</body>
+</html>
